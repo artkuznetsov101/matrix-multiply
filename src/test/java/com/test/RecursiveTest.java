@@ -19,7 +19,7 @@ public class RecursiveTest {
 
 	@Test
 	public void testMatrixMultiply() throws Exception {
-		if (Multiplier.matrixSize <= Multiplier.debugMatrixSize) {
+		if (Multiplier.matrixSize <= Multiplier.matrixSizeForDebug) {
 			System.out.println("matrix 1:");
 			System.out.println(MatrixHelper.toString(m1));
 
