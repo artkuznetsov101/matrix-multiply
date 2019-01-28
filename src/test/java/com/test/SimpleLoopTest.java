@@ -14,7 +14,7 @@ public class SimpleLoopTest {
 	public void setUpBefore() throws Exception {
 		multiplier = MultiplierFactory.getSimpleLoopMultiplier();	
 		m1 = MatrixHelper.createMatrix1(Multiplier.size);
-		m2 = MatrixHelper.createMatrix1(Multiplier.size);	
+		m2 = MatrixHelper.createMatrix2(Multiplier.size);	
 	}
 	
 	@Test
