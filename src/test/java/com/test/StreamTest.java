@@ -7,19 +7,33 @@ import org.junit.Test;
 public class StreamTest {
 
 	Multiplier multiplier;
-	int[][] m1;
-	int[][] m2;
+	int[][] m1, m2, mv;
 
 	@Before
 	public void setUpBefore() throws Exception {
 		multiplier = MultiplierFactory.getStreamMultiplier();
-		m1 = MatrixHelper.createMatrix1(Multiplier.size);
-		m2 = MatrixHelper.createMatrix2(Multiplier.size);
+		m1 = MatrixHelper.createMatrix1(Multiplier.matrixSize);
+		m2 = MatrixHelper.createMatrix2(Multiplier.matrixSize);
+		mv = MatrixHelper.createMultipliedMatrix(Multiplier.matrixSize);
 	}
 
 	@Test
 	public void testMatrixMultiply() throws Exception {
-		multiplier.multiply(m1, m2);
+		if (Multiplier.matrixSize <= Multiplier.debugMatrixSize) {
+			System.out.println("matrix 1:");
+			System.out.println(MatrixHelper.toString(m1));
+
+			System.out.println("matrix 2:");
+			System.out.println(MatrixHelper.toString(m2));
+
+			int[][] result = multiplier.multiply(m1, m2);
+
+			System.out.println("result matrix:");
+			System.out.println(MatrixHelper.toString(result));
+
+			System.out.println("valid ? " + MatrixHelper.isEqual(result, mv));
+		} else
+			multiplier.multiply(m1, m2);
 	}
 
 	@After
