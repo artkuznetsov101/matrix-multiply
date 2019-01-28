@@ -9,6 +9,8 @@ Matrix multiplication using different techniques:
 * Java 8 work-stealing thread pool
 * Java 8 work-stealing thread pool with optimization
 
+You can set matrix size in 'com.test.Multiplier.matrixSize'. It's 1024 by default.
+
 How to run:
          
     mvn test
