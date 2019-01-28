@@ -4,7 +4,7 @@
 
 Matrix multiplication using different techniques:
 * simple for loop
-* recursive multiplier
+* recursive multiplier (matrix size need to be a power of two)
 * Java 8 Stream API
 * Java 8 work-stealing thread pool
 * Java 8 work-stealing thread pool with optimization
