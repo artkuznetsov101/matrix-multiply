@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class StreamTest {
+public class RecursiveTest {
 
 	Multiplier multiplier;
 	int[][] m1;
@@ -12,7 +12,7 @@ public class StreamTest {
 
 	@Before
 	public void setUpBefore() throws Exception {
-		multiplier = MultiplierFactory.getStreamMultiplier();
+		multiplier = MultiplierFactory.getRecursiveMultiplier();
 		m1 = MatrixHelper.createMatrix1(Multiplier.size);
 		m2 = MatrixHelper.createMatrix2(Multiplier.size);
 	}

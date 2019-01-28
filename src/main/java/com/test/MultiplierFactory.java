@@ -16,4 +16,8 @@ public class MultiplierFactory {
 	static public Multiplier getStreamMultiplier() {
 		return new StreamMultiplier();
 	}
+
+	static public Multiplier getRecursiveMultiplier() {
+		return new RecursiveMultiplier();
+	}
 }

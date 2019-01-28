@@ -9,22 +9,21 @@ public class WorkStealingByRowTest {
 	Multiplier multiplier;
 	int[][] m1;
 	int[][] m2;
-	
+
 	@Before
 	public void setUpBefore() throws Exception {
-		multiplier = MultiplierFactory.getWorkStealingByRowMultiplier();	
+		multiplier = MultiplierFactory.getWorkStealingByRowMultiplier();
 		m1 = MatrixHelper.createMatrix1(Multiplier.size);
-		m2 = MatrixHelper.createMatrix2(Multiplier.size);		
+		m2 = MatrixHelper.createMatrix2(Multiplier.size);
 	}
-	
+
 	@Test
-	public void testGetTimestampWithTimezone() throws Exception {
+	public void testMatrixMultiply() throws Exception {
 		multiplier.multiply(m1, m2);
 	}
-	
+
 	@After
 	public void tearDownAfter() throws Exception {
 		multiplier.close();
 	}
 }
-
