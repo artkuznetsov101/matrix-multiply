@@ -34,13 +34,21 @@ public class RecursiveMultiplier implements Multiplier {
 		} else {
 			int size = inputSize / 2;
 
-			this.compute(m1, m1Row, m1Column, m2, m2Row, m2Column, mr, mrRow, mrColumn, size);
-			this.compute(m1, m1Row, m1Column + size, m2, m2Row + size, m2Column, mr, mrRow, mrColumn, size);
+			//a11,b11
+            this.compute(m1, m1Row, m1Column, m2, m2Row, m2Column, mr, mrRow, mrColumn, size);
+            //a12,b21
+            this.compute(m1, m1Row, m1Column + size, m2, m2Row + size, m2Column, mr, mrRow, mrColumn, size);
+            //a11,b12
 			this.compute(m1, m1Row, m1Column, m2, m2Row, m2Column + size, mr, mrRow, mrColumn, size);
-			this.compute(m1, m1Row, m1Column + size, m2, m2Row + size, m2Column + size, mr, mrRow, mrColumn, size);
-			this.compute(m1, m1Row + size, m1Column, m2, m2Row, m2Column, mr, mrRow, mrColumn, size);
-			this.compute(m1, m1Row + size, m1Column + size, m2, m2Row + size, m2Column, mr, mrRow, mrColumn, size);
-			this.compute(m1, m1Row + size, m1Column, m2, m2Row, m2Column + size, mr, mrRow, mrColumn, size);
+			//a12,b22
+            this.compute(m1, m1Row, m1Column + size, m2, m2Row + size, m2Column + size, mr, mrRow, mrColumn, size);
+            //a21,b11
+            this.compute(m1, m1Row + size, m1Column, m2, m2Row, m2Column, mr, mrRow, mrColumn, size);
+			//a22,b21
+            this.compute(m1, m1Row + size, m1Column + size, m2, m2Row + size, m2Column, mr, mrRow, mrColumn, size);
+            //a21,b12
+            this.compute(m1, m1Row + size, m1Column, m2, m2Row, m2Column + size, mr, mrRow, mrColumn, size);
+            //a22,b22
 			this.compute(m1, m1Row + size, m1Column + size, m2, m2Row + size, m2Column + size, mr, mrRow, mrColumn, size);
 
 			return mr;
